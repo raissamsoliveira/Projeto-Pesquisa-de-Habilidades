@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrição da Habilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Descrição da Habilidade</h1>
+    </header>
+    <main>
+        <section id="descricao-habilidade">
+            <!-- A descrição da habilidade será inserida aqui -->
+        </section>
+    </main>
+    <footer>
+        <p>2024 - Multiverso da Experiência do Cliente. Todos os direitos reservados</p>
+        <p>Entre em contato pelo email: raissa@agenciakaffi.com.br</p>
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com/raissamsoliveira" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const habilidade = urlParams.get('habilidade');
+
+            const habilidades = {
+                "Comunicação": "Desenvolver a habilidade de comunicação é fundamental para CS e CX...",
+                "Empatia": "A empatia permite que você entenda e compartilhe os sentimentos dos outros...",
+                "Gestão de Tempo": "A gestão eficaz do tempo é essencial para o sucesso em CS e CX...",
+                "Resolução de Conflitos": "A capacidade de resolver conflitos é crucial...",
+                "Pensamento Crítico": "O pensamento crítico ajuda a resolver problemas complexos..."
+            };
+
+            const descricaoHabilidade = document.getElementById('descricao-habilidade');
+            if (habilidades[habilidade]) {
+                descricaoHabilidade.innerHTML = `
+                    <h2>${habilidade}</h2>
+                    <p>${habilidades[habilidade]}</p>
+                `;
+            } else {
+                descricaoHabilidade.innerHTML = '<p>Habilidade não encontrada.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
